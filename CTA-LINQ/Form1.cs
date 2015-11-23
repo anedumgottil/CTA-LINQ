@@ -25,12 +25,8 @@ namespace CTA_LINQ
     private void sourceToolStripMenuItem_Click(object sender, EventArgs e)
     {
       System.Diagnostics.Process.Start("https://github.com/Anedumgottil/CTA-LINQ");
-      
-    }
 
-    private void button1_Click(object sender, EventArgs e)
-    {
-      //nothing
+      //var q = from m in db.Lines ssjsjsjk
     }
 
   }
