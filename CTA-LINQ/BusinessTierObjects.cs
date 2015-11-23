@@ -85,6 +85,7 @@ namespace BusinessTier
     {
       this.stop_id = stop_id;
       this.line_id = line_id;
+      //test
     }
   }
 
