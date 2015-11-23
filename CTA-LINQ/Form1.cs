@@ -16,5 +16,10 @@ namespace CTA_LINQ
     {
       InitializeComponent();
     }
+
+    private void sourceToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      System.Diagnostics.Process.Start("https://github.com/Anedumgottil/CTA-LINQ");
+    }
   }
 }
