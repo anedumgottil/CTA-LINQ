@@ -60,11 +60,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessTierLogic.cs" />
+    <Compile Include="BusinessTierObjects.cs" />
     <Compile Include="CTADataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CTADataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessTier.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
