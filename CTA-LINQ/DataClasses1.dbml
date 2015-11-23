@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CTA" Class="CTADataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\CTA.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="CTA_LINQ.Properties.Settings" SettingsPropertyName="CTAConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Lines" Member="Lines">
+    <Type Name="Line">
+      <Column Name="LineID" Type="System.Byte" DbType="TinyInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Color" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Association Name="Line_StopDetail" Member="StopDetails" ThisKey="LineID" OtherKey="LineID" Type="StopDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Riderships" Member="Riderships">
+    <Type Name="Ridership">
+      <Column Name="RiderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TheDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="TypeOfDay" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="DailyTotal" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Station_Ridership" Member="Station" ThisKey="StationID" OtherKey="StationID" Type="Station" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Stations" Member="Stations">
+    <Type Name="Station">
+      <Column Name="StationID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Association Name="Station_Ridership" Member="Riderships" ThisKey="StationID" OtherKey="StationID" Type="Ridership" />
+      <Association Name="Station_Stop" Member="Stops" ThisKey="StationID" OtherKey="StationID" Type="Stop" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StopDetails" Member="StopDetails">
+    <Type Name="StopDetail">
+      <Column Name="StopID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LineID" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Line_StopDetail" Member="Line" ThisKey="LineID" OtherKey="LineID" Type="Line" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Stop_StopDetail" Member="Stop" ThisKey="StopID" OtherKey="StopID" Type="Stop" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Stops" Member="Stops">
+    <Type Name="Stop">
+      <Column Name="StopID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="StationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Direction" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="ADA" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Latitude" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Longitude" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="Stop_StopDetail" Member="StopDetails" ThisKey="StopID" OtherKey="StopID" Type="StopDetail" />
+      <Association Name="Station_Stop" Member="Station" ThisKey="StationID" OtherKey="StationID" Type="Station" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+</Database>
