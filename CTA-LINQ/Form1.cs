@@ -26,8 +26,12 @@ namespace CTA_LINQ
     {
       System.Diagnostics.Process.Start("https://github.com/Anedumgottil/CTA-LINQ");
 
-      //var q = from m in db.Lines ssjsjsjk
+      
     }
 
+    private void button1_Click(object sender, EventArgs e)
+    {
+      //test
+    }
   }
 }
