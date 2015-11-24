@@ -1,4 +1,30 @@
-﻿using System;
+﻿
+//
+// Needed
+// Display all CTA Stations
+// Total Ridership
+// avg RiderShip (Daily)
+// Stops at stations
+// location
+// total number of stations
+//
+
+
+//
+// Extra
+// Graph daily total
+// Avg RiderShip (monthly/yearly)
+// Find Stations(by name) (maybe both)
+// Change background color depending on statiion color
+// Direction of travel compass
+// Handicap blinker
+// Info about a specific day (graph)
+// closest station
+// list of one line (color buttons)
+//
+
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
