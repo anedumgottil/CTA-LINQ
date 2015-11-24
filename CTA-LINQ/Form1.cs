@@ -28,7 +28,12 @@ namespace CTA_LINQ
 
     private void button1_Click(object sender, EventArgs e)
     {
-      //test
+      var temp = new BusinessTier.Business("Test");
+      var data = temp.GetallLines();
+      foreach (var x in data)
+      {
+        listBox1.Items.Add(x.line_id);
+      }
     }
   }
 }
