@@ -20,7 +20,7 @@
         <elementListCompartment Id="bcf1dd87-ecfc-4b86-b0f7-156e641dc30d" absoluteBounds="4.6400000000000006, 1.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(6.25 : 2.06899251302083); (6.25 : 4.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(6.25 : 2.06899251302083); (6.25 : 4.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CTADataContext/Station/Station_Ridership" />
       <nodes>
         <classShapeMoniker Id="e70a2be0-bf97-483c-8ef6-95adb4be1a98" />
@@ -33,7 +33,7 @@
         <elementListCompartment Id="76637e15-6f8c-410f-b6e5-cc0942e991d7" absoluteBounds="2.265, 8.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.4375 : 3.81899251302083); (2.4375 : 8)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.4375 : 3.81899251302083); (2.4375 : 8)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CTADataContext/Line/Line_StopDetail" />
       <nodes>
         <classShapeMoniker Id="f1559019-d220-4aaa-a999-81ec9a730177" />
@@ -46,14 +46,14 @@
         <elementListCompartment Id="bc53fcaf-bf7b-4f39-ab2c-cac5c1653de9" absoluteBounds="3.6400000000000006, 4.5850000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3.9375 : 6.28049967447917); (3.9375 : 8)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3.9375 : 6.28049967447917); (3.9375 : 8)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CTADataContext/Stop/Stop_StopDetail" />
       <nodes>
         <classShapeMoniker Id="e1c63bdd-4e01-42c8-b25c-29c494569fd5" />
         <classShapeMoniker Id="41b90ccf-74d7-46f1-bfa9-1c74ae3125b4" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.125 : 2.06899251302083); (5.125 : 4.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.125 : 2.06899251302083); (5.125 : 4.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CTADataContext/Station/Station_Stop" />
       <nodes>
         <classShapeMoniker Id="e70a2be0-bf97-483c-8ef6-95adb4be1a98" />
