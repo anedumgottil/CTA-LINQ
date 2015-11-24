@@ -39,6 +39,7 @@ namespace BusinessTier
       _DBFile = DatabaseFilename;
 
       dataTier = new DataAccessTier.Data(DatabaseFilename);
+      //var q = from l in db.Lines
     }
 
 
