@@ -52,7 +52,19 @@ namespace BusinessTier
     {
       return dataTier.TestConnection();
     }
+    public List<Line> GetallLines()
+    {
+      var temp = new List<Line>();
+      var q = from m in db.Lines
+              select m;
 
+      foreach (var x in q)
+      {
+        var l = new Line(x.LineID, x.Color);
+        temp.Add(l);
+      }
+      return temp;
+    }
 
     
 
