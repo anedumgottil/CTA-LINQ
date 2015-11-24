@@ -42,12 +42,25 @@ namespace CTA_LINQ
     public Form1()
     {
       InitializeComponent();
-
+      displayAllStops();
+    }
+    private void displayAllStops()
+    {
       listBox1.Items.Clear();
 
-      
-    }
+      BusinessTier.Business bt = new BusinessTier.Business();
 
+      var data = bt.GetallStop();
+
+      var ordered_data = from ordered_stop in data
+                         orderby ordered_stop.name ascending
+                         select ordered_stop;
+
+      foreach (var stop in ordered_data)
+      {
+        listBox1.Items.Add(stop.name);
+      }
+    }
     private void sourceToolStripMenuItem_Click(object sender, EventArgs e)
     {
       System.Diagnostics.Process.Start("https://github.com/Anedumgottil/CTA-LINQ");
@@ -57,8 +70,9 @@ namespace CTA_LINQ
 
     private void button1_Click(object sender, EventArgs e)
     {
-      var temp = new BusinessTier.Business("Test");
+      var temp = new BusinessTier.Business();
       var data = temp.GetallLines();
+      
       foreach (var x in data)
       {
         listBox1.Items.Add(x.line_id);

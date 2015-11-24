@@ -25,34 +25,15 @@ namespace BusinessTier
     // Fields:
     //
     private CTADataContext db = new CTADataContext();
-    private string _DBFile;
-    private DataAccessTier.Data dataTier;
-
-    public object NULL { get; private set; }
-
+  
 
     //
     // Constructor:
     //
-    public Business(string DatabaseFilename)
+    public Business()
     {
-      _DBFile = DatabaseFilename;
-
-      dataTier = new DataAccessTier.Data(DatabaseFilename);
-      //var q = from l in db.Lines
+     
     }
-
-
-    //
-    // TestConnection:
-    //
-    // Returns true if we can establish a connection to the database, false if not.
-    //
-    public bool TestConnection()
-    {
-      return dataTier.TestConnection();
-    }
-
 
     public List<Line> GetallLines()
     {
@@ -131,8 +112,8 @@ namespace BusinessTier
       return data;
     }
 
-    
 
+    
 
     
 
