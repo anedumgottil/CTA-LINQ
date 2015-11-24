@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CTA_LINQ
+namespace CTAData
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;

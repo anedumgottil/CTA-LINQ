@@ -12,14 +12,11 @@ namespace CTA_LINQ
 {
   public partial class Form1 : Form
   {
-    private CTADataContext db;
 
     public Form1()
     {
       
       InitializeComponent();
-
-      db = new CTADataContext();
     }
 
     private void sourceToolStripMenuItem_Click(object sender, EventArgs e)
