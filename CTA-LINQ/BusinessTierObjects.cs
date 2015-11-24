@@ -24,11 +24,11 @@ namespace BusinessTier
   {
     public readonly int rider_id;
     public readonly int station_id;
-    public readonly int current_date;  //Maybe change this data type to parse it easier 
+    public readonly DateTime current_date;  //Maybe change this data type to parse it easier 
     public readonly int daily_total;
     public readonly string type_of_day;
 
-    public Ridership(int rider_id, int station_id, int current_date, int daily_total, string type_of_day)
+    public Ridership(int rider_id, int station_id, DateTime current_date, int daily_total, string type_of_day)
     {
       this.rider_id = rider_id;
       this.station_id = station_id;
@@ -43,15 +43,13 @@ namespace BusinessTier
   public class Station
   {
     public readonly int station_id;
-    public readonly int line_id;
-    public readonly Ridership riders;
+    public readonly string name;
     //List of Stops
 
-    public Station(int station_id, int line_id, Ridership riders)
+    public Station(int station_id, string name)
     {
       this.station_id = station_id;
-      this.line_id = line_id;
-      this.riders = riders;
+      this.name = name;
     }
   }
 
@@ -60,12 +58,13 @@ namespace BusinessTier
     public readonly int stop_id;
     public readonly int station_id;
     public readonly string name;
+    public readonly bool ADA; 
     public readonly string direction;
-    public readonly int latitude;
-    public readonly int longitude;
+    public readonly double latitude;
+    public readonly double longitude;
     //public readonly StopDetail stops;
 
-    public Stop(int stop_id, int station_id, string name, string direction, int latitude, int longitude)
+    public Stop(int stop_id, int station_id, string name, string direction, bool ada, double latitude, double longitude)
     {
       this.stop_id = stop_id;
       this.station_id = station_id;
@@ -73,6 +72,7 @@ namespace BusinessTier
       this.direction = direction;
       this.latitude = latitude;
       this.longitude = longitude;
+      this.ADA = ada;
     }
   }
   //testsss
