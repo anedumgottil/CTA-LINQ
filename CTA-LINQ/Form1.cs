@@ -41,8 +41,11 @@ namespace CTA_LINQ
 
     public Form1()
     {
-      
       InitializeComponent();
+
+      listBox1.Items.Clear();
+
+      
     }
 
     private void sourceToolStripMenuItem_Click(object sender, EventArgs e)
