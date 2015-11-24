@@ -52,6 +52,7 @@ namespace BusinessTier
     {
       return dataTier.TestConnection();
     }
+
     public List<Line> GetallLines()
     {
       var temp = new List<Line>();

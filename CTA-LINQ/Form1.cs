@@ -35,5 +35,10 @@ namespace CTA_LINQ
         listBox1.Items.Add(x.line_id);
       }
     }
+
+    private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+    {
+
+    }
   }
 }
