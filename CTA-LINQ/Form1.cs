@@ -111,12 +111,30 @@ namespace CTA_LINQ
 
       BusinessTier.Business bt = new BusinessTier.Business();
 
-      var data = bt.GetStop(line);
+      var data = bt.GetStops(line);
 
       foreach (var stop in data)
       {
         listBox2.Items.Add(stop.name);
       }
+
+    }
+
+    private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      listBox3.Items.Clear();
+
+      var line = this.listBox1.Text;
+      var stop = this.listBox2.Text;
+      BusinessTier.Business bt = new BusinessTier.Business();
+
+      var data = bt.GetSingleStop(line, stop);
+      listBox3.Items.Add(data.ADA);
+      listBox3.Items.Add(data.direction);
+      listBox3.Items.Add(data.latitude);
+      listBox3.Items.Add(data.longitude);
+      listBox3.Items.Add(data.name);
+
 
     }
   }

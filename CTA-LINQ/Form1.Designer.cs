@@ -35,6 +35,7 @@
       this.sourceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.button1 = new System.Windows.Forms.Button();
       this.listBox2 = new System.Windows.Forms.ListBox();
+      this.listBox3 = new System.Windows.Forms.ListBox();
       this.menuStrip1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -97,12 +98,22 @@
       this.listBox2.Name = "listBox2";
       this.listBox2.Size = new System.Drawing.Size(291, 173);
       this.listBox2.TabIndex = 3;
+      this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
+      // 
+      // listBox3
+      // 
+      this.listBox3.FormattingEnabled = true;
+      this.listBox3.Location = new System.Drawing.Point(337, 42);
+      this.listBox3.Name = "listBox3";
+      this.listBox3.Size = new System.Drawing.Size(291, 173);
+      this.listBox3.TabIndex = 4;
       // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(897, 528);
+      this.Controls.Add(this.listBox3);
       this.Controls.Add(this.listBox2);
       this.Controls.Add(this.button1);
       this.Controls.Add(this.listBox1);
@@ -126,6 +137,7 @@
     private System.Windows.Forms.ToolStripMenuItem sourceToolStripMenuItem;
     private System.Windows.Forms.Button button1;
     private System.Windows.Forms.ListBox listBox2;
+    private System.Windows.Forms.ListBox listBox3;
   }
 }
 

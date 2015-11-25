@@ -112,7 +112,7 @@ namespace BusinessTier
       return data;
     }
 
-    public List<Stop> GetStop(string station_name)
+    public List<Stop> GetStops(string station_name)
     {
       var data =  new List<Stop>();
       var q = from station in db.Stations
@@ -126,6 +126,36 @@ namespace BusinessTier
         data.Add(stop_info);
       }
       return data;
+    }
+    public List<Stop> GetStops(int StationID)
+    {
+      var data = new List<Stop>();
+      var q = from stop in db.Stops
+              where stop.StationID == StationID
+              select stop;
+
+      foreach (var x in q)
+      {
+        var stop_info = new Stop(x.StopID, x.StationID, x.Name, x.Direction, x.ADA, x.Latitude, x.Longitude);
+        data.Add(stop_info);
+      }
+      return data;
+    }
+
+    public Stop GetSingleStop(string stationName, string stop_name)
+    {
+      var q = from station in db.Stations
+              join stops in db.Stops on station.StationID equals stops.StationID into stopgroup
+              from stop in stopgroup
+              where stop.Name == stop_name && station.Name == stationName
+              select stop;
+
+      foreach (var x in q)
+      {
+        var stop_info = new Stop(x.StopID, x.StationID, x.Name, x.Direction, x.ADA, x.Latitude, x.Longitude);
+        return stop_info;
+      }
+      return null;
     }
     
 
