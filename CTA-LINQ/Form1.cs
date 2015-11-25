@@ -1,10 +1,10 @@
 ﻿
 //
 // Needed
-// Display all CTA Stations
+// Display all CTA Stations  (done)
 // Total Ridership
 // avg RiderShip (Daily)
-// Stops at stations
+// Stops at stations         (done)
 // location
 // total number of stations
 //
@@ -42,7 +42,8 @@ namespace CTA_LINQ
     public Form1()
     {
       InitializeComponent();
-      displayAllStops();
+      //displayAllStops();
+      displayAllStations();
     }
     private void displayAllStops()
     {
@@ -59,6 +60,23 @@ namespace CTA_LINQ
       foreach (var stop in ordered_data)
       {
         listBox1.Items.Add(stop.name);
+      }
+    }
+    private void displayAllStations()
+    {
+      listBox1.Items.Clear();
+
+      BusinessTier.Business bt = new BusinessTier.Business();
+
+      var data = bt.GetallStations();
+
+      var ordered_data = from ordered_stations in data
+                         orderby ordered_stations.name ascending
+                         select ordered_stations;
+
+      foreach (var station in ordered_data)
+      {
+        listBox1.Items.Add(station.name);
       }
     }
     private void sourceToolStripMenuItem_Click(object sender, EventArgs e)
@@ -81,6 +99,23 @@ namespace CTA_LINQ
 
     private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
     {
+
+    }
+
+    private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      listBox2.Items.Clear();
+
+      var line = this.listBox1.Text;
+
+      BusinessTier.Business bt = new BusinessTier.Business();
+
+      var data = bt.GetStop(line);
+
+      foreach (var stop in data)
+      {
+        listBox2.Items.Add(stop.name);
+      }
 
     }
   }

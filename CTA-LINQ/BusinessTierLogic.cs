@@ -112,6 +112,23 @@ namespace BusinessTier
       return data;
     }
 
+    public List<Stop> GetStop(string station_name)
+    {
+      var data =  new List<Stop>();
+      var q = from station in db.Stations
+              join stop in db.Stops on station.StationID equals stop.StationID into stopgroup
+              from station2 in stopgroup
+              where station.Name == station_name
+              select station2;
+      foreach (var x in q)
+      {
+        var stop_info = new Stop(x.StopID, x.StationID, x.Name, x.Direction, x.ADA, x.Latitude, x.Longitude);
+        data.Add(stop_info);
+      }
+      return data;
+    }
+    
+
 
     
 
