@@ -106,6 +106,7 @@ namespace CTA_LINQ
     {
       listBox2.Items.Clear();
 
+
       var line = this.listBox1.Text;
 
       BusinessTier.Business bt = new BusinessTier.Business();
