@@ -10,7 +10,7 @@ namespace BusinessTier
   {
     public readonly int line_id;
     public readonly string color;
-    //public readonly StopDetial stops;
+
 
     public Line(int line_id, string color)
     {

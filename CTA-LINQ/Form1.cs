@@ -51,7 +51,7 @@ namespace CTA_LINQ
 
       BusinessTier.Business bt = new BusinessTier.Business();
 
-      var data = bt.GetallStop();
+      var data = bt.GetAllStops();
 
       var ordered_data = from ordered_stop in data
                          orderby ordered_stop.name ascending
@@ -68,7 +68,7 @@ namespace CTA_LINQ
 
       BusinessTier.Business bt = new BusinessTier.Business();
 
-      var data = bt.GetallStations();
+      var data = bt.GetAllStations();
 
       var ordered_data = from ordered_stations in data
                          orderby ordered_stations.name ascending
@@ -89,7 +89,7 @@ namespace CTA_LINQ
     private void button1_Click(object sender, EventArgs e)
     {
       var temp = new BusinessTier.Business();
-      var data = temp.GetallLines();
+      var data = temp.GetAllLines();
       
       foreach (var x in data)
       {
@@ -113,6 +113,10 @@ namespace CTA_LINQ
       
       var data = bt.GetStops(line);
 
+      //var line_obj = bt.GetLine(Convert.ToInt32(line));
+
+      //listBox2.Items.Add(line);
+
       foreach (var stop in data)
       {
         listBox2.Items.Add(stop.name);
@@ -129,11 +133,15 @@ namespace CTA_LINQ
       BusinessTier.Business bt = new BusinessTier.Business();
 
       var data = bt.GetSingleStop(line, stop);
-      listBox3.Items.Add(data.ADA);
-      listBox3.Items.Add(data.direction);
-      listBox3.Items.Add(data.latitude);
-      listBox3.Items.Add(data.longitude);
-      listBox3.Items.Add(data.name);
+      if (data != null)
+      {
+        listBox3.Items.Add(data.ADA);
+        listBox3.Items.Add(data.direction);
+        listBox3.Items.Add(data.latitude);
+        listBox3.Items.Add(data.longitude);
+        listBox3.Items.Add(data.name);
+      }
+      
 
 
     }

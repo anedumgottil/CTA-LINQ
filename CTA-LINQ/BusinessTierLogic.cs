@@ -35,7 +35,7 @@ namespace BusinessTier
      
     }
 
-    public List<Line> GetallLines()
+    public List<Line> GetAllLines()
     {
       var data = new List<Line>();
       var q = from m in db.Lines
@@ -50,7 +50,7 @@ namespace BusinessTier
       return data;
     }
 
-    public List<Ridership> GetallRiders()
+    public List<Ridership> GetAllRiders()
     {
       var data = new List<Ridership>();
       var q = from m in db.Riderships
@@ -65,7 +65,7 @@ namespace BusinessTier
       return data;
     }
 
-    public List<Station> GetallStations()
+    public List<Station> GetAllStations()
     {
       var data = new List<Station>();
       var q = from m in db.Stations
@@ -80,7 +80,7 @@ namespace BusinessTier
       return data;
     }
 
-    public List<StopDetail> GetallStopDetail()
+    public List<StopDetail> GetAllStopDetails()
     {
       var data = new List<StopDetail>();
       var q = from m in db.StopDetails
@@ -96,7 +96,7 @@ namespace BusinessTier
     }
 
 
-    public List<Stop> GetallStop()
+    public List<Stop> GetAllStops()
     {
       var data = new List<Stop>();
       var q = from m in db.Stops
@@ -127,6 +127,7 @@ namespace BusinessTier
       }
       return data;
     }
+
     public List<Stop> GetStops(int StationID)
     {
       var data = new List<Stop>();
@@ -157,8 +158,20 @@ namespace BusinessTier
       }
       return null;
     }
-    
 
+    public Line GetLine(int line_id)
+    {
+      Line line = null;
+      var data = from selected_line in db.Lines
+                 where selected_line.LineID == line_id
+                 select line;
+
+      foreach (var x in data)
+      {
+        line = new Line(x.line_id, x.color);
+      }
+      return line;
+    }
 
     
 
