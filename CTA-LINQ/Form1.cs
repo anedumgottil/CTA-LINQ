@@ -51,7 +51,7 @@ namespace CTA_LINQ
 
       BusinessTier.Business bt = new BusinessTier.Business();
 
-      var data = bt.GetAllStops();
+      var data = bt.GetallStop();
 
       var ordered_data = from ordered_stop in data
                          orderby ordered_stop.name ascending
@@ -61,6 +61,8 @@ namespace CTA_LINQ
       {
         listBox1.Items.Add(stop.name);
       }
+      int total = data.Count();
+      label1.Text = string.Format("{0}", total);
     }
     private void displayAllStations()
     {
@@ -68,7 +70,7 @@ namespace CTA_LINQ
 
       BusinessTier.Business bt = new BusinessTier.Business();
 
-      var data = bt.GetAllStations();
+      var data = bt.GetallStations();
 
       var ordered_data = from ordered_stations in data
                          orderby ordered_stations.name ascending
@@ -78,6 +80,9 @@ namespace CTA_LINQ
       {
         listBox1.Items.Add(station.name);
       }
+      int total = data.Count();
+      label1.Text = string.Format("{0}",total);
+
     }
     private void sourceToolStripMenuItem_Click(object sender, EventArgs e)
     {
@@ -89,7 +94,7 @@ namespace CTA_LINQ
     private void button1_Click(object sender, EventArgs e)
     {
       var temp = new BusinessTier.Business();
-      var data = temp.GetAllLines();
+      var data = temp.GetallLines();
       
       foreach (var x in data)
       {
@@ -113,10 +118,6 @@ namespace CTA_LINQ
       
       var data = bt.GetStops(line);
 
-      //var line_obj = bt.GetLine(Convert.ToInt32(line));
-
-      //listBox2.Items.Add(line);
-
       foreach (var stop in data)
       {
         listBox2.Items.Add(stop.name);
@@ -129,21 +130,47 @@ namespace CTA_LINQ
       listBox3.Items.Clear();
 
       var line = this.listBox1.Text;
+
       var stop = this.listBox2.Text;
+
       BusinessTier.Business bt = new BusinessTier.Business();
 
       var data = bt.GetSingleStop(line, stop);
-      if (data != null)
-      {
-        listBox3.Items.Add(data.ADA);
-        listBox3.Items.Add(data.direction);
-        listBox3.Items.Add(data.latitude);
-        listBox3.Items.Add(data.longitude);
-        listBox3.Items.Add(data.name);
-      }
+
+      listBox3.Items.Add(data.ADA);
+
+      listBox3.Items.Add(data.direction);
+
+      listBox3.Items.Add(data.latitude);
+
+      listBox3.Items.Add(data.longitude);
+
+      listBox3.Items.Add(data.name);
+
+    }
+
+    private void button2_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void dailyToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      // 
+      // Display the results in a subform:
+      //
+      Form2 frm = new Form2();
       
+      BusinessTier.Business bt = new BusinessTier.Business();
 
+      var stations = bt.GetallStations();
 
+      foreach (var station in stations)
+      {
+        frm.listBox1.Items.Add(station.name);
+      }
+
+      frm.ShowDialog();
     }
   }
 }
