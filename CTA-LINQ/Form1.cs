@@ -12,7 +12,7 @@
 
 //
 // Extra
-// Graph daily total (done)
+// Graph daily total
 // Avg RiderShip (monthly/yearly)
 // Find Stations(by name) (maybe both)
 // Change background color depending on statiion color
