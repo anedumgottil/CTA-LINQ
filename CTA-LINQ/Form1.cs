@@ -163,7 +163,7 @@ namespace CTA_LINQ
       
       BusinessTier.Business bt = new BusinessTier.Business();
 
-      var stations = bt.GetallStations();
+      var stations = bt.GetAllStations();
 
       foreach (var station in stations)
       {
