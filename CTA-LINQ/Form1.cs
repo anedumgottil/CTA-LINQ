@@ -51,7 +51,7 @@ namespace CTA_LINQ
 
       BusinessTier.Business bt = new BusinessTier.Business();
 
-      var data = bt.GetallStop();
+      var data = bt.GetAllStops();
 
       var ordered_data = from ordered_stop in data
                          orderby ordered_stop.name ascending
@@ -70,7 +70,7 @@ namespace CTA_LINQ
 
       BusinessTier.Business bt = new BusinessTier.Business();
 
-      var data = bt.GetallStations();
+      var data = bt.GetAllStations();
 
       var ordered_data = from ordered_stations in data
                          orderby ordered_stations.name ascending
@@ -94,7 +94,7 @@ namespace CTA_LINQ
     private void button1_Click(object sender, EventArgs e)
     {
       var temp = new BusinessTier.Business();
-      var data = temp.GetallLines();
+      var data = temp.GetAllLines();
       
       foreach (var x in data)
       {
