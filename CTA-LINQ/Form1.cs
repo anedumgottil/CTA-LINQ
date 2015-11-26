@@ -110,7 +110,7 @@ namespace CTA_LINQ
       var line = this.listBox1.Text;
 
       BusinessTier.Business bt = new BusinessTier.Business();
-
+      
       var data = bt.GetStops(line);
 
       foreach (var stop in data)
