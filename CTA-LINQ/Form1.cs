@@ -61,6 +61,8 @@ namespace CTA_LINQ
       {
         listBox1.Items.Add(stop.name);
       }
+      int total = data.Count();
+      label1.Text = string.Format("{0}", total);
     }
     private void displayAllStations()
     {
@@ -78,6 +80,9 @@ namespace CTA_LINQ
       {
         listBox1.Items.Add(station.name);
       }
+      int total = data.Count();
+      label1.Text = string.Format("{0}",total);
+
     }
     private void sourceToolStripMenuItem_Click(object sender, EventArgs e)
     {
@@ -125,17 +130,47 @@ namespace CTA_LINQ
       listBox3.Items.Clear();
 
       var line = this.listBox1.Text;
+
       var stop = this.listBox2.Text;
+
       BusinessTier.Business bt = new BusinessTier.Business();
 
       var data = bt.GetSingleStop(line, stop);
+
       listBox3.Items.Add(data.ADA);
+
       listBox3.Items.Add(data.direction);
+
       listBox3.Items.Add(data.latitude);
+
       listBox3.Items.Add(data.longitude);
+
       listBox3.Items.Add(data.name);
 
+    }
 
+    private void button2_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void dailyToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      // 
+      // Display the results in a subform:
+      //
+      Form2 frm = new Form2();
+      
+      BusinessTier.Business bt = new BusinessTier.Business();
+
+      var stations = bt.GetallStations();
+
+      foreach (var station in stations)
+      {
+        frm.listBox1.Items.Add(station.name);
+      }
+
+      frm.ShowDialog();
     }
   }
 }
