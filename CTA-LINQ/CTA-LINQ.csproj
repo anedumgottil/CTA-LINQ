@@ -147,9 +147,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>CTA.mdf</DependentUpon>
     </Content>
-    <Content Include="Handicap-Dark.png" />
+    <Content Include="Handicap-Dark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Handicap-Light.png">
-      <CustomToolNamespace>light</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>

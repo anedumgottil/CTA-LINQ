@@ -5,8 +5,8 @@
 // Total Ridership
 // avg RiderShip (Daily)
 // Stops at stations         (done)
-// location
-// total number of stations
+// location                  (done)
+// total number of stations  (done)
 //
 
 
@@ -17,7 +17,7 @@
 // Find Stations(by name) (maybe both)
 // Change background color depending on statiion color
 // Direction of travel compass
-// Handicap blinker
+// Handicap blinker                                               (done)
 // Info about a specific day (graph)
 // closest station
 // list of one line (color buttons)
@@ -44,7 +44,7 @@ namespace CTA_LINQ
       InitializeComponent();
       //displayAllStops();
       displayAllStations();
-      Handicap.ImageLocation = @"Image\Handicap-Light.png";
+      Handicap.ImageLocation = @"Handicap-Dark.png";
     }
     private void displayAllStops()
     {
@@ -144,6 +144,11 @@ namespace CTA_LINQ
         {
           //Image image = Image()
           //Handicap.ImageLocation = "http://www.clker.com/cliparts/9/u/7/b/Y/V/handicap-logo-hi.png";
+          Handicap.ImageLocation = @"Handicap-Light.png";
+        }
+        else
+        {
+          Handicap.ImageLocation = @"Handicap-Dark.png";
         }
         
         listBox3.Items.Add(data.direction);
