@@ -33,14 +33,16 @@
       this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.placeholderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.sourceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.graphToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.dailyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.button1 = new System.Windows.Forms.Button();
       this.listBox2 = new System.Windows.Forms.ListBox();
       this.listBox3 = new System.Windows.Forms.ListBox();
       this.label1 = new System.Windows.Forms.Label();
       this.button2 = new System.Windows.Forms.Button();
-      this.graphToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.dailyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.Handicap = new System.Windows.Forms.PictureBox();
       this.menuStrip1.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.Handicap)).BeginInit();
       this.SuspendLayout();
       // 
       // listBox1
@@ -85,6 +87,21 @@
       this.sourceToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
       this.sourceToolStripMenuItem.Text = "Source";
       this.sourceToolStripMenuItem.Click += new System.EventHandler(this.sourceToolStripMenuItem_Click);
+      // 
+      // graphToolStripMenuItem
+      // 
+      this.graphToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dailyToolStripMenuItem});
+      this.graphToolStripMenuItem.Name = "graphToolStripMenuItem";
+      this.graphToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+      this.graphToolStripMenuItem.Text = "Graph";
+      // 
+      // dailyToolStripMenuItem
+      // 
+      this.dailyToolStripMenuItem.Name = "dailyToolStripMenuItem";
+      this.dailyToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+      this.dailyToolStripMenuItem.Text = "Daily";
+      this.dailyToolStripMenuItem.Click += new System.EventHandler(this.dailyToolStripMenuItem_Click);
       // 
       // button1
       // 
@@ -132,26 +149,22 @@
       this.button2.UseVisualStyleBackColor = true;
       this.button2.Click += new System.EventHandler(this.button2_Click);
       // 
-      // graphToolStripMenuItem
+      // Handicap
       // 
-      this.graphToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dailyToolStripMenuItem});
-      this.graphToolStripMenuItem.Name = "graphToolStripMenuItem";
-      this.graphToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
-      this.graphToolStripMenuItem.Text = "Graph";
-      // 
-      // dailyToolStripMenuItem
-      // 
-      this.dailyToolStripMenuItem.Name = "dailyToolStripMenuItem";
-      this.dailyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-      this.dailyToolStripMenuItem.Text = "Daily";
-      this.dailyToolStripMenuItem.Click += new System.EventHandler(this.dailyToolStripMenuItem_Click);
+      this.Handicap.Location = new System.Drawing.Point(722, 152);
+      this.Handicap.Name = "Handicap";
+      this.Handicap.Size = new System.Drawing.Size(100, 92);
+      this.Handicap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+      this.Handicap.TabIndex = 7;
+      this.Handicap.TabStop = false;
+      this.Handicap.Click += new System.EventHandler(this.Handicap_Click);
       // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(897, 528);
+      this.Controls.Add(this.Handicap);
       this.Controls.Add(this.button2);
       this.Controls.Add(this.label1);
       this.Controls.Add(this.listBox3);
@@ -164,6 +177,7 @@
       this.Text = "CTA Data Analysis";
       this.menuStrip1.ResumeLayout(false);
       this.menuStrip1.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.Handicap)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -183,6 +197,7 @@
     private System.Windows.Forms.Button button2;
     private System.Windows.Forms.ToolStripMenuItem graphToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem dailyToolStripMenuItem;
+    private System.Windows.Forms.PictureBox Handicap;
   }
 }
 

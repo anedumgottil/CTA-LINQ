@@ -64,7 +64,25 @@ namespace BusinessTier
       }
       return data;
     }
+    public List<Ridership> GetRiders(string name)
+    {
+      var data = new List<Ridership>();
+      var q = from station in db.Stations
+              where station.Name == name
+              join rider in db.Riderships on station.StationID equals rider.StationID into stationgroup
+              from info in stationgroup
+              orderby info.TheDate
+              select info;
 
+
+
+      foreach (var x in q)
+      {
+        var rider = new Ridership(x.RiderID, x.StationID, x.TheDate, x.DailyTotal, x.TypeOfDay);
+        data.Add(rider);
+      }
+      return data;
+    }
     public List<Station> GetAllStations()
     {
       var data = new List<Station>();

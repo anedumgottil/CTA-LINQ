@@ -44,6 +44,7 @@ namespace CTA_LINQ
       InitializeComponent();
       //displayAllStops();
       displayAllStations();
+      Handicap.ImageLocation = @"Image\Handicap-Light.png";
     }
     private void displayAllStops()
     {
@@ -136,16 +137,23 @@ namespace CTA_LINQ
       BusinessTier.Business bt = new BusinessTier.Business();
 
       var data = bt.GetSingleStop(line, stop);
+      if (data != null)
+      {
+        listBox3.Items.Add(data.ADA);
+        if (data.ADA)
+        {
+          //Image image = Image()
+          //Handicap.ImageLocation = "http://www.clker.com/cliparts/9/u/7/b/Y/V/handicap-logo-hi.png";
+        }
+        
+        listBox3.Items.Add(data.direction);
 
-      listBox3.Items.Add(data.ADA);
+        listBox3.Items.Add(data.latitude); 
 
-      listBox3.Items.Add(data.direction);
-
-      listBox3.Items.Add(data.latitude);
-
-      listBox3.Items.Add(data.longitude);
-
-      listBox3.Items.Add(data.name);
+        listBox3.Items.Add(data.longitude);
+      }
+      
+      
 
     }
 
@@ -171,6 +179,11 @@ namespace CTA_LINQ
       }
 
       frm.ShowDialog();
+    }
+
+    private void Handicap_Click(object sender, EventArgs e)
+    {
+
     }
   }
 }

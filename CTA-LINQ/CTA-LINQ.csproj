@@ -147,6 +147,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>CTA.mdf</DependentUpon>
     </Content>
+    <Content Include="Handicap-Dark.png" />
+    <Content Include="Handicap-Light.png">
+      <CustomToolNamespace>light</CustomToolNamespace>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
