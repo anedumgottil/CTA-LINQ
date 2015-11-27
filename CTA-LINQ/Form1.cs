@@ -12,13 +12,13 @@
 
 //
 // Extra
-// Graph daily total
+// Graph daily total                                              (done)
 // Avg RiderShip (monthly/yearly)
 // Find Stations(by name) (maybe both)
 // Change background color depending on statiion color
 // Direction of travel compass
 // Handicap blinker                                               (done)
-// Info about a specific day (graph)
+// Info about a specific day                                      (done)
 // closest station
 // list of one line (color buttons)
 //
@@ -189,6 +189,37 @@ namespace CTA_LINQ
     private void Handicap_Click(object sender, EventArgs e)
     {
 
+    }
+
+    private void toolStripMenuItem1_Click(object sender, EventArgs e)
+    {
+      Form3 frm = new Form3();
+
+      BusinessTier.Business bt = new BusinessTier.Business();
+
+      var stations = bt.GetAllStations();
+
+      foreach (var station in stations)
+      {
+        frm.listBox1.Items.Add(station.name);
+      }
+
+      frm.ShowDialog();
+
+    }
+
+    private void button4_Click(object sender, EventArgs e)
+    {
+      Form4 frm = new Form4();
+
+      BusinessTier.Business bt = new BusinessTier.Business();
+      var data = bt.GetColorStops("Red");
+
+      foreach (var x in data)
+      {
+        frm.listBox1.Items.Add(x.name);
+      }
+      frm.ShowDialog();
     }
   }
 }

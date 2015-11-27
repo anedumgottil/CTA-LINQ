@@ -50,6 +50,8 @@ namespace BusinessTier
       return data;
     }
 
+
+
     public List<Ridership> GetAllRiders()
     {
       var data = new List<Ridership>();
@@ -98,6 +100,24 @@ namespace BusinessTier
       return data;
     }
 
+    public Ridership GetStation(string name , DateTime date)
+    {
+      var q = from station in db.Stations
+              where station.Name == name 
+              join rider in db.Riderships on station.StationID equals rider.StationID into stationgroup
+              from info in stationgroup
+              where info.TheDate == date
+              orderby info.DailyTotal
+              select info;
+
+
+      foreach(var x in q){
+        var oneStation = new Ridership(x.RiderID, x.StationID, x.TheDate, x.DailyTotal, x.TypeOfDay);
+        return oneStation;
+      }
+      return null;
+    }
+
     public List<StopDetail> GetAllStopDetails()
     {
       var data = new List<StopDetail>();
@@ -138,6 +158,25 @@ namespace BusinessTier
               from station2 in stopgroup
               where station.Name == station_name
               select station2;
+      foreach (var x in q)
+      {
+        var stop_info = new Stop(x.StopID, x.StationID, x.Name, x.Direction, x.ADA, x.Latitude, x.Longitude);
+        data.Add(stop_info);
+      }
+      return data;
+    }
+
+    public List<Stop> GetColorStops(string color)
+    {
+      var data = new List<Stop>();
+      var q = from line in db.Lines
+              where line.Color == color
+              join stops in db.StopDetails on line.LineID equals stops.LineID into stopGroup
+              from info in stopGroup
+              join names in db.Stops on info.StopID equals names.StopID into grp
+              from info2 in grp
+              select info2;
+   
       foreach (var x in q)
       {
         var stop_info = new Stop(x.StopID, x.StationID, x.Name, x.Direction, x.ADA, x.Latitude, x.Longitude);
@@ -190,7 +229,23 @@ namespace BusinessTier
       }
       return line;
     }
+    public List<string> GetOneInfo(DateTime date)
+    {
+      var info = from rider in db.Riderships
+                 where rider.TheDate == date
+                 join name in db.Stations on rider.StationID equals name.StationID into infogroup
+                 from station in infogroup 
+                 select new  { stationName = station.Name,
+                              total = rider.DailyTotal,
+                 };
 
+      var infolist = new List<string>();
+      foreach (var x in info)
+      {
+        infolist.Add(string.Format("{0}:{1}",x.stationName,x.total));
+      }
+      return infolist;
+    }
     
 
     

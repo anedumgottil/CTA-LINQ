@@ -35,12 +35,14 @@
       this.sourceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.graphToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.dailyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
       this.button1 = new System.Windows.Forms.Button();
       this.listBox2 = new System.Windows.Forms.ListBox();
       this.listBox3 = new System.Windows.Forms.ListBox();
       this.label1 = new System.Windows.Forms.Label();
       this.button2 = new System.Windows.Forms.Button();
       this.Handicap = new System.Windows.Forms.PictureBox();
+      this.button4 = new System.Windows.Forms.Button();
       this.menuStrip1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.Handicap)).BeginInit();
       this.SuspendLayout();
@@ -61,7 +63,7 @@
             this.graphToolStripMenuItem});
       this.menuStrip1.Location = new System.Drawing.Point(0, 0);
       this.menuStrip1.Name = "menuStrip1";
-      this.menuStrip1.Size = new System.Drawing.Size(897, 24);
+      this.menuStrip1.Size = new System.Drawing.Size(913, 24);
       this.menuStrip1.TabIndex = 1;
       this.menuStrip1.Text = "menuStrip1";
       this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -91,7 +93,8 @@
       // graphToolStripMenuItem
       // 
       this.graphToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dailyToolStripMenuItem});
+            this.dailyToolStripMenuItem,
+            this.toolStripMenuItem1});
       this.graphToolStripMenuItem.Name = "graphToolStripMenuItem";
       this.graphToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
       this.graphToolStripMenuItem.Text = "Graph";
@@ -99,9 +102,16 @@
       // dailyToolStripMenuItem
       // 
       this.dailyToolStripMenuItem.Name = "dailyToolStripMenuItem";
-      this.dailyToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-      this.dailyToolStripMenuItem.Text = "Daily";
+      this.dailyToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+      this.dailyToolStripMenuItem.Text = "Daily Total";
       this.dailyToolStripMenuItem.Click += new System.EventHandler(this.dailyToolStripMenuItem_Click);
+      // 
+      // toolStripMenuItem1
+      // 
+      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+      this.toolStripMenuItem1.Size = new System.Drawing.Size(185, 22);
+      this.toolStripMenuItem1.Text = "One Day Information";
+      this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
       // 
       // button1
       // 
@@ -159,11 +169,23 @@
       this.Handicap.TabStop = false;
       this.Handicap.Click += new System.EventHandler(this.Handicap_Click);
       // 
+      // button4
+      // 
+      this.button4.BackColor = System.Drawing.Color.Red;
+      this.button4.Cursor = System.Windows.Forms.Cursors.Default;
+      this.button4.Location = new System.Drawing.Point(100, 506);
+      this.button4.Name = "button4";
+      this.button4.Size = new System.Drawing.Size(36, 23);
+      this.button4.TabIndex = 9;
+      this.button4.UseVisualStyleBackColor = false;
+      this.button4.Click += new System.EventHandler(this.button4_Click);
+      // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(897, 528);
+      this.ClientSize = new System.Drawing.Size(913, 539);
+      this.Controls.Add(this.button4);
       this.Controls.Add(this.Handicap);
       this.Controls.Add(this.button2);
       this.Controls.Add(this.label1);
@@ -198,6 +220,8 @@
     private System.Windows.Forms.ToolStripMenuItem graphToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem dailyToolStripMenuItem;
     private System.Windows.Forms.PictureBox Handicap;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+    private System.Windows.Forms.Button button4;
   }
 }
 
