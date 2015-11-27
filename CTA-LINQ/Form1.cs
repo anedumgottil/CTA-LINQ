@@ -14,7 +14,7 @@
 // Extra
 // Graph daily total                                              (done)
 // Avg RiderShip (monthly/yearly)
-// Find Stations(by name) (maybe both)
+// Find Stations(by name) (maybe both)                            
 // Change background color depending on statiion color
 // Direction of travel compass
 // Handicap blinker                                               (done)
@@ -216,6 +216,126 @@ namespace CTA_LINQ
       var data = bt.GetColorStops("Red");
       frm.label1.Text = "Red Line Stops";
       frm.BackColor = Color.FromName("Red");
+      foreach (var x in data)
+      {
+        frm.listBox1.Items.Add(x.name);
+      }
+      frm.ShowDialog();
+    }
+
+    private void button3_Click(object sender, EventArgs e)
+    {
+      Form4 frm = new Form4();
+
+      BusinessTier.Business bt = new BusinessTier.Business();
+      var data = bt.GetColorStops("Blue");
+      frm.label1.Text = "Blue Line Stops";
+      frm.BackColor = Color.FromName("Blue");
+      foreach (var x in data)
+      {
+        frm.listBox1.Items.Add(x.name);
+      }
+      frm.ShowDialog();
+    }
+
+    private void button5_Click(object sender, EventArgs e)
+    {
+      Form4 frm = new Form4();
+
+      BusinessTier.Business bt = new BusinessTier.Business();
+      var data = bt.GetColorStops("Green");
+      frm.label1.Text = "Green Line Stops";
+      frm.BackColor = Color.FromName("Green");
+      foreach (var x in data)
+      {
+        frm.listBox1.Items.Add(x.name);
+      }
+      frm.ShowDialog();
+    }
+
+    private void button6_Click(object sender, EventArgs e)
+    {
+      Form4 frm = new Form4();
+
+      BusinessTier.Business bt = new BusinessTier.Business();
+      var data = bt.GetColorStops("Brown");
+      frm.label1.Text = "Brown Line Stops";
+      frm.BackColor = Color.FromName("Brown");
+      foreach (var x in data)
+      {
+        frm.listBox1.Items.Add(x.name);
+      }
+      frm.ShowDialog();
+    }
+
+    private void button7_Click(object sender, EventArgs e)
+    {
+      Form4 frm = new Form4();
+
+      BusinessTier.Business bt = new BusinessTier.Business();
+      var data = bt.GetColorStops("Purple");
+      frm.label1.Text = "Purple Line Stops";
+      frm.BackColor = Color.FromName("Purple");
+      foreach (var x in data)
+      {
+        frm.listBox1.Items.Add(x.name);
+      }
+      frm.ShowDialog();
+    }
+
+    private void button8_Click(object sender, EventArgs e)
+    {
+      Form4 frm = new Form4();
+
+      BusinessTier.Business bt = new BusinessTier.Business();
+      var data = bt.GetColorStops("Purple-Express");
+      frm.label1.Text = "Purple-Express Line Stops";
+      frm.BackColor = Color.FromName("Purple");
+      foreach (var x in data)
+      {
+        frm.listBox1.Items.Add(x.name);
+      }
+      frm.ShowDialog();
+    }
+
+    private void button9_Click(object sender, EventArgs e)
+    {
+      Form4 frm = new Form4();
+
+      BusinessTier.Business bt = new BusinessTier.Business();
+      var data = bt.GetColorStops("Yellow");
+      frm.label1.Text = "Yellow Line Stops";
+      frm.BackColor = Color.FromName("Yellow");
+      foreach (var x in data)
+      {
+        frm.listBox1.Items.Add(x.name);
+      }
+      frm.ShowDialog();
+    }
+
+    private void button10_Click(object sender, EventArgs e)
+    {
+      Form4 frm = new Form4();
+
+      BusinessTier.Business bt = new BusinessTier.Business();
+      var data = bt.GetColorStops("Pink");
+      frm.label1.Text = "Pink Line Stops";
+      frm.BackColor = Color.FromName("Pink");
+      foreach (var x in data)
+      {
+        frm.listBox1.Items.Add(x.name);
+      }
+      frm.ShowDialog();
+    }
+
+    private void button11_Click(object sender, EventArgs e)
+    {
+      Form4 frm = new Form4();
+
+      BusinessTier.Business bt = new BusinessTier.Business();
+      var data = bt.GetColorStops("Orange");
+      frm.label1.Text = "Orange Line Stops";
+      frm.BackColor = Color.FromName("Orange");
       foreach (var x in data)
       {
         frm.listBox1.Items.Add(x.name);
