@@ -44,7 +44,7 @@ namespace CTA_LINQ
       InitializeComponent();
       //displayAllStops();
       displayAllStations();
-      Handicap.ImageLocation = @"Image\Handicap-Light.png";
+      Handicap.ImageLocation = @"Handicap-Light.png";
     }
     private void displayAllStops()
     {
