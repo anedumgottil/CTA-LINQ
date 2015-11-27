@@ -214,7 +214,8 @@ namespace CTA_LINQ
 
       BusinessTier.Business bt = new BusinessTier.Business();
       var data = bt.GetColorStops("Red");
-
+      frm.label1.Text = "Red Line Stops";
+      frm.BackColor = Color.FromName("Red");
       foreach (var x in data)
       {
         frm.listBox1.Items.Add(x.name);
