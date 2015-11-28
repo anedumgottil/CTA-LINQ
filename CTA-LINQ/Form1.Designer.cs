@@ -58,6 +58,7 @@
       this.label4 = new System.Windows.Forms.Label();
       this.Longitude = new System.Windows.Forms.TextBox();
       this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+      this.label5 = new System.Windows.Forms.Label();
       this.menuStrip1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.Handicap)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.CompassBox)).BeginInit();
@@ -303,11 +304,22 @@
       // 
       this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
       // 
+      // label5
+      // 
+      this.label5.AutoSize = true;
+      this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label5.Location = new System.Drawing.Point(622, 27);
+      this.label5.Name = "label5";
+      this.label5.Size = new System.Drawing.Size(129, 20);
+      this.label5.TabIndex = 25;
+      this.label5.Text = "Search for Stops";
+      // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(913, 539);
+      this.Controls.Add(this.label5);
       this.Controls.Add(this.label4);
       this.Controls.Add(this.StationSearchBox);
       this.Controls.Add(this.label3);
@@ -363,6 +375,7 @@
     private System.Windows.Forms.Label label4;
     private System.Windows.Forms.TextBox Longitude;
     private System.Windows.Forms.ToolTip toolTip1;
+    private System.Windows.Forms.Label label5;
   }
 }
 

@@ -181,7 +181,7 @@ namespace CTA_LINQ
       }
       else if (color.Equals("Green"))
       {
-        this.BackColor = System.Drawing.Color.Green;
+        this.BackColor = System.Drawing.Color.YellowGreen;
       }
       else if (color.Equals("Brown"))
       {
@@ -276,7 +276,7 @@ namespace CTA_LINQ
       BusinessTier.Business bt = new BusinessTier.Business();
       var data = bt.GetColorStops("Blue");
       frm.label1.Text = "Blue Line Stops";
-      frm.BackColor = System.Drawing.Color.LightBlue;
+      frm.BackColor = System.Drawing.Color.SkyBlue;
       foreach (var x in data)
       {
         frm.listBox1.Items.Add(x.name);
@@ -291,7 +291,7 @@ namespace CTA_LINQ
       BusinessTier.Business bt = new BusinessTier.Business();
       var data = bt.GetColorStops("Green");
       frm.label1.Text = "Green Line Stops";
-      frm.BackColor = System.Drawing.Color.Green;
+      frm.BackColor = System.Drawing.Color.YellowGreen;
       foreach (var x in data)
       {
         frm.listBox1.Items.Add(x.name);
