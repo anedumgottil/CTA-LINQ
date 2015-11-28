@@ -47,6 +47,7 @@
       this.chart1.Legends.Add(legend1);
       this.chart1.Location = new System.Drawing.Point(281, 40);
       this.chart1.Name = "chart1";
+      this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
       series1.ChartArea = "ChartArea1";
       series1.IsVisibleInLegend = false;
       series1.Legend = "Legend1";
@@ -82,11 +83,11 @@
       // 
       // button1
       // 
-      this.button1.Location = new System.Drawing.Point(64, 404);
+      this.button1.Location = new System.Drawing.Point(57, 404);
       this.button1.Name = "button1";
-      this.button1.Size = new System.Drawing.Size(75, 23);
+      this.button1.Size = new System.Drawing.Size(98, 23);
       this.button1.TabIndex = 4;
-      this.button1.Text = "button1";
+      this.button1.Text = "Graph Data";
       this.button1.UseVisualStyleBackColor = true;
       this.button1.Click += new System.EventHandler(this.button1_Click);
       // 
@@ -101,7 +102,7 @@
       this.Controls.Add(this.dateTimePicker1);
       this.Controls.Add(this.chart1);
       this.Name = "Form2";
-      this.Text = "Form2";
+      this.Text = "Daily Total";
       ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
       this.ResumeLayout(false);
 

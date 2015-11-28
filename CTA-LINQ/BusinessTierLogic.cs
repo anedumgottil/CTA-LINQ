@@ -215,7 +215,22 @@ namespace BusinessTier
       }
       return null;
     }
+    public Line GetLineFromStop(Stop s)
+    {
+      Line line = null;
 
+      var q = from stop_detail in db.StopDetails
+              join selected_line in db.Lines on stop_detail.LineID equals selected_line.LineID into line_group
+              from new_line in line_group
+              where stop_detail.StopID == s.stop_id
+              select new_line;
+      
+      foreach (var x in q)
+      {
+        line = new Line(x.LineID,x.Color);
+      }
+      return line;
+    }
     public Line GetLine(int line_id)
     {
       Line line = null;

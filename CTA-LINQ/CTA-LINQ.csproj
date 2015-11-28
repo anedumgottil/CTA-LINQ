@@ -68,7 +68,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CTADataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataAccessTier.cs" />
     <Compile Include="CTADataClasses.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -168,6 +167,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Compass-West.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CTA-Logo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="CTA.mdf">

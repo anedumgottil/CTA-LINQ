@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       this.listBox1 = new System.Windows.Forms.ListBox();
       this.menuStrip1 = new System.Windows.Forms.MenuStrip();
       this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,15 +47,17 @@
       this.yellowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.pinkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.orangeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.button1 = new System.Windows.Forms.Button();
       this.listBox2 = new System.Windows.Forms.ListBox();
       this.label1 = new System.Windows.Forms.Label();
       this.Handicap = new System.Windows.Forms.PictureBox();
       this.CompassBox = new System.Windows.Forms.PictureBox();
-      this.Longitude = new System.Windows.Forms.TextBox();
       this.Lattidude = new System.Windows.Forms.TextBox();
       this.label2 = new System.Windows.Forms.Label();
       this.label3 = new System.Windows.Forms.Label();
+      this.StationSearchBox = new System.Windows.Forms.TextBox();
+      this.label4 = new System.Windows.Forms.Label();
+      this.Longitude = new System.Windows.Forms.TextBox();
+      this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
       this.menuStrip1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.Handicap)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.CompassBox)).BeginInit();
@@ -96,6 +99,7 @@
       this.placeholderToolStripMenuItem.Name = "placeholderToolStripMenuItem";
       this.placeholderToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
       this.placeholderToolStripMenuItem.Text = "[Placeholder]";
+      this.placeholderToolStripMenuItem.Click += new System.EventHandler(this.placeholderToolStripMenuItem_Click);
       // 
       // sourceToolStripMenuItem
       // 
@@ -206,16 +210,6 @@
       this.orangeToolStripMenuItem.Text = "Orange";
       this.orangeToolStripMenuItem.Click += new System.EventHandler(this.orangeToolStripMenuItem_Click);
       // 
-      // button1
-      // 
-      this.button1.Location = new System.Drawing.Point(634, 47);
-      this.button1.Name = "button1";
-      this.button1.Size = new System.Drawing.Size(75, 23);
-      this.button1.TabIndex = 2;
-      this.button1.Text = "button1";
-      this.button1.UseVisualStyleBackColor = true;
-      this.button1.Click += new System.EventHandler(this.button1_Click);
-      // 
       // listBox2
       // 
       this.listBox2.FormattingEnabled = true;
@@ -228,7 +222,7 @@
       // label1
       // 
       this.label1.AutoSize = true;
-      this.label1.Location = new System.Drawing.Point(9, 506);
+      this.label1.Location = new System.Drawing.Point(82, 509);
       this.label1.Name = "label1";
       this.label1.Size = new System.Drawing.Size(35, 13);
       this.label1.TabIndex = 5;
@@ -253,17 +247,9 @@
       this.CompassBox.TabIndex = 18;
       this.CompassBox.TabStop = false;
       // 
-      // Longitude
-      // 
-      this.Longitude.Location = new System.Drawing.Point(417, 339);
-      this.Longitude.Name = "Longitude";
-      this.Longitude.ReadOnly = true;
-      this.Longitude.Size = new System.Drawing.Size(100, 20);
-      this.Longitude.TabIndex = 19;
-      // 
       // Lattidude
       // 
-      this.Lattidude.Location = new System.Drawing.Point(417, 394);
+      this.Lattidude.Location = new System.Drawing.Point(417, 390);
       this.Lattidude.Name = "Lattidude";
       this.Lattidude.ReadOnly = true;
       this.Lattidude.Size = new System.Drawing.Size(100, 20);
@@ -272,26 +258,58 @@
       // label2
       // 
       this.label2.AutoSize = true;
-      this.label2.Location = new System.Drawing.Point(322, 346);
+      this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label2.Location = new System.Drawing.Point(322, 338);
       this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(54, 13);
+      this.label2.Size = new System.Drawing.Size(72, 18);
       this.label2.TabIndex = 21;
       this.label2.Text = "Longitude";
       // 
       // label3
       // 
       this.label3.AutoSize = true;
-      this.label3.Location = new System.Drawing.Point(322, 401);
+      this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label3.Location = new System.Drawing.Point(322, 389);
       this.label3.Name = "label3";
-      this.label3.Size = new System.Drawing.Size(51, 13);
+      this.label3.Size = new System.Drawing.Size(67, 18);
       this.label3.TabIndex = 22;
       this.label3.Text = "Lattidude";
+      // 
+      // StationSearchBox
+      // 
+      this.StationSearchBox.Location = new System.Drawing.Point(622, 54);
+      this.StationSearchBox.Name = "StationSearchBox";
+      this.StationSearchBox.Size = new System.Drawing.Size(248, 20);
+      this.StationSearchBox.TabIndex = 23;
+      // 
+      // label4
+      // 
+      this.label4.AutoSize = true;
+      this.label4.Location = new System.Drawing.Point(12, 508);
+      this.label4.Name = "label4";
+      this.label4.Size = new System.Drawing.Size(75, 13);
+      this.label4.TabIndex = 24;
+      this.label4.Text = "Total Stations:";
+      // 
+      // Longitude
+      // 
+      this.Longitude.Location = new System.Drawing.Point(417, 339);
+      this.Longitude.Name = "Longitude";
+      this.Longitude.ReadOnly = true;
+      this.Longitude.Size = new System.Drawing.Size(100, 20);
+      this.Longitude.TabIndex = 19;
+      // 
+      // toolTip1
+      // 
+      this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
       // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(913, 539);
+      this.Controls.Add(this.label4);
+      this.Controls.Add(this.StationSearchBox);
       this.Controls.Add(this.label3);
       this.Controls.Add(this.label2);
       this.Controls.Add(this.Lattidude);
@@ -300,7 +318,6 @@
       this.Controls.Add(this.Handicap);
       this.Controls.Add(this.label1);
       this.Controls.Add(this.listBox2);
-      this.Controls.Add(this.button1);
       this.Controls.Add(this.listBox1);
       this.Controls.Add(this.menuStrip1);
       this.MainMenuStrip = this.menuStrip1;
@@ -322,7 +339,6 @@
     private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem placeholderToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem sourceToolStripMenuItem;
-    private System.Windows.Forms.Button button1;
     private System.Windows.Forms.ListBox listBox2;
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.ToolStripMenuItem graphToolStripMenuItem;
@@ -330,7 +346,6 @@
     private System.Windows.Forms.PictureBox Handicap;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     private System.Windows.Forms.PictureBox CompassBox;
-    private System.Windows.Forms.TextBox Longitude;
     private System.Windows.Forms.TextBox Lattidude;
     private System.Windows.Forms.Label label2;
     private System.Windows.Forms.Label label3;
@@ -344,6 +359,10 @@
     private System.Windows.Forms.ToolStripMenuItem yellowToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem pinkToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem orangeToolStripMenuItem;
+    private System.Windows.Forms.TextBox StationSearchBox;
+    private System.Windows.Forms.Label label4;
+    private System.Windows.Forms.TextBox Longitude;
+    private System.Windows.Forms.ToolTip toolTip1;
   }
 }
 

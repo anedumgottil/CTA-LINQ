@@ -15,6 +15,12 @@ namespace CTA_LINQ
     public Form4()
     {
       InitializeComponent();
+      CTALineBox.ImageLocation = @"CTA-Logo.png";
+    }
+
+    private void CTALineBox_Click(object sender, EventArgs e)
+    {
+     
     }
   }
 }

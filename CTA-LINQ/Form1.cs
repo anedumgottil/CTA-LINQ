@@ -46,6 +46,7 @@ namespace CTA_LINQ
       //displayAllStops();
       displayAllStations();
       Handicap.ImageLocation = @"Handicap-Dark.png";
+      
     }
     private void displayAllStops()
     {
@@ -93,17 +94,7 @@ namespace CTA_LINQ
       
     }
 
-    private void button1_Click(object sender, EventArgs e)
-    {
-      var temp = new BusinessTier.Business();
-      var data = temp.GetAllLines();
-      
-      foreach (var x in data)
-      {
-        listBox1.Items.Add(x.line_id);
-      }
-    }
-
+    
     private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
     {
 
@@ -129,18 +120,20 @@ namespace CTA_LINQ
 
     private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
     {
-      listBox3.Items.Clear();
 
-      var line = this.listBox1.Text;
+      var station = this.listBox1.Text;
 
       var stop = this.listBox2.Text;
 
       BusinessTier.Business bt = new BusinessTier.Business();
 
-      var data = bt.GetSingleStop(line, stop);
+      
+      var data = bt.GetSingleStop(station, stop);
+     
       if (data != null)
       {
-        listBox3.Items.Add(data.ADA);
+        var line = bt.GetLineFromStop(data);
+        updateBackgroundColor(line.color);
         if (data.ADA)
         {
           Handicap.ImageLocation = @"Handicap-Light.png";
@@ -149,7 +142,7 @@ namespace CTA_LINQ
         {
           Handicap.ImageLocation = @"Handicap-Dark.png";
         }
-        
+ 
        
         updateDirection(data.direction);
         
@@ -157,32 +150,65 @@ namespace CTA_LINQ
         Lattidude.Text = Convert.ToString(data.latitude);
      
       }
-      
-      
 
     }
-    private void updateDirection(String directoin)
+    private void updateDirection(String direction)
     {
-      if (directoin.Equals("S"))
+      if (direction.Equals("S"))
       {
         CompassBox.ImageLocation = @"Compass-South.png";
-      }else if(directoin.Equals("N"))
+      }else if(direction.Equals("N"))
       {
         CompassBox.ImageLocation = @"Compass-North.png";
-      }else if(directoin.Equals("E"))
+      }else if(direction.Equals("E"))
       {
         CompassBox.ImageLocation = @"Compass-East.png";
-      }else if(directoin.Equals("W"))
+      }else if(direction.Equals("W"))
       {
         CompassBox.ImageLocation = @"Compass-West.png";
       }
     }
 
-    private void button2_Click(object sender, EventArgs e)
+    private void updateBackgroundColor(String color)
     {
-
+      if (color.Equals("Red"))
+      {
+        this.BackColor = System.Drawing.Color.Red;
+      }
+      else if (color.Equals("Blue"))
+      {
+        this.BackColor = System.Drawing.Color.SkyBlue;
+      }
+      else if (color.Equals("Green"))
+      {
+        this.BackColor = System.Drawing.Color.Green;
+      }
+      else if (color.Equals("Brown"))
+      {
+        this.BackColor = System.Drawing.Color.Chocolate;
+      }
+      else if (color.Equals("Purple") || color.Equals("Purple-Express"))
+      {
+        this.BackColor = System.Drawing.Color.Purple;
+      }
+      else if (color.Equals("Pink"))
+      {
+        this.BackColor = System.Drawing.Color.Pink;
+      }
+      else if (color.Equals("Yellow"))
+      {
+        this.BackColor = System.Drawing.Color.Yellow;
+      }
+      else if (color.Equals("Orange"))
+      {
+        this.BackColor = System.Drawing.Color.Coral;
+      }
+      else
+      {
+        this.BackColor = System.Drawing.Color.Gray;
+      }
+      
     }
-
     private void dailyToolStripMenuItem_Click(object sender, EventArgs e)
     {
       // 
@@ -224,49 +250,8 @@ namespace CTA_LINQ
 
     }
 
-    private void button4_Click(object sender, EventArgs e)
-    {
-    }
-
-    private void button3_Click(object sender, EventArgs e)
-    {
-      
-    }
-
-    private void button5_Click(object sender, EventArgs e)
-    {
-      
-    }
-
-    private void button6_Click(object sender, EventArgs e)
-    {
-      
-    }
-
-    private void button7_Click(object sender, EventArgs e)
-    {
-      
-    }
-
-    private void button8_Click(object sender, EventArgs e)
-    {
-      
-    }
-
-    private void button9_Click(object sender, EventArgs e)
-    {
-      
-    }
-
-    private void button10_Click(object sender, EventArgs e)
-    {
-      
-    }
-
-    private void button11_Click(object sender, EventArgs e)
-    {
-      
-    }
+  
+    
 
     private void redToolStripMenuItem_Click(object sender, EventArgs e)
     {
@@ -291,7 +276,7 @@ namespace CTA_LINQ
       BusinessTier.Business bt = new BusinessTier.Business();
       var data = bt.GetColorStops("Blue");
       frm.label1.Text = "Blue Line Stops";
-      frm.BackColor = Color.FromName("Blue");
+      frm.BackColor = System.Drawing.Color.LightBlue;
       foreach (var x in data)
       {
         frm.listBox1.Items.Add(x.name);
@@ -306,7 +291,7 @@ namespace CTA_LINQ
       BusinessTier.Business bt = new BusinessTier.Business();
       var data = bt.GetColorStops("Green");
       frm.label1.Text = "Green Line Stops";
-      frm.BackColor = Color.FromName("Green");
+      frm.BackColor = System.Drawing.Color.Green;
       foreach (var x in data)
       {
         frm.listBox1.Items.Add(x.name);
@@ -321,7 +306,7 @@ namespace CTA_LINQ
       BusinessTier.Business bt = new BusinessTier.Business();
       var data = bt.GetColorStops("Brown");
       frm.label1.Text = "Brown Line Stops";
-      frm.BackColor = Color.FromName("Brown");
+      frm.BackColor = System.Drawing.Color.Chocolate;
       foreach (var x in data)
       {
         frm.listBox1.Items.Add(x.name);
@@ -336,7 +321,7 @@ namespace CTA_LINQ
       BusinessTier.Business bt = new BusinessTier.Business();
       var data = bt.GetColorStops("Purple");
       frm.label1.Text = "Purple Line Stops";
-      frm.BackColor = Color.FromName("Purple");
+      frm.BackColor = System.Drawing.Color.Purple;
       foreach (var x in data)
       {
         frm.listBox1.Items.Add(x.name);
@@ -351,7 +336,7 @@ namespace CTA_LINQ
       BusinessTier.Business bt = new BusinessTier.Business();
       var data = bt.GetColorStops("Purple-Express");
       frm.label1.Text = "Purple-Express Line Stops";
-      frm.BackColor = Color.FromName("Purple");
+      frm.BackColor = System.Drawing.Color.Purple;
       foreach (var x in data)
       {
         frm.listBox1.Items.Add(x.name);
@@ -366,7 +351,7 @@ namespace CTA_LINQ
       BusinessTier.Business bt = new BusinessTier.Business();
       var data = bt.GetColorStops("Yellow");
       frm.label1.Text = "Yellow Line Stops";
-      frm.BackColor = Color.FromName("Yellow");
+      frm.BackColor = System.Drawing.Color.Yellow;
       foreach (var x in data)
       {
         frm.listBox1.Items.Add(x.name);
@@ -381,7 +366,7 @@ namespace CTA_LINQ
       BusinessTier.Business bt = new BusinessTier.Business();
       var data = bt.GetColorStops("Pink");
       frm.label1.Text = "Pink Line Stops";
-      frm.BackColor = Color.FromName("Pink");
+      frm.BackColor = System.Drawing.Color.Pink;
       foreach (var x in data)
       {
         frm.listBox1.Items.Add(x.name);
@@ -396,12 +381,22 @@ namespace CTA_LINQ
       BusinessTier.Business bt = new BusinessTier.Business();
       var data = bt.GetColorStops("Orange");
       frm.label1.Text = "Orange Line Stops";
-      frm.BackColor = System.Drawing.Color.Tomato;
+      frm.BackColor = System.Drawing.Color.Coral;
       foreach (var x in data)
       {
         frm.listBox1.Items.Add(x.name);
       }
       frm.ShowDialog();
+    }
+
+    private void placeholderToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void toolTip1_Popup(object sender, PopupEventArgs e)
+    {
+      
     }
   }
 }
