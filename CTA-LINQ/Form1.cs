@@ -129,7 +129,7 @@ namespace CTA_LINQ
 
     private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
     {
-      listBox3.Items.Clear();
+      //listBox3.Items.Clear();
 
       var line = this.listBox1.Text;
 
@@ -140,7 +140,7 @@ namespace CTA_LINQ
       var data = bt.GetSingleStop(line, stop);
       if (data != null)
       {
-        listBox3.Items.Add(data.ADA);
+        //listBox3.Items.Add(data.ADA);
         if (data.ADA)
         {
           Handicap.ImageLocation = @"Handicap-Light.png";
