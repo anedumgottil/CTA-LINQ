@@ -51,8 +51,14 @@
       this.button9 = new System.Windows.Forms.Button();
       this.button10 = new System.Windows.Forms.Button();
       this.button11 = new System.Windows.Forms.Button();
+      this.CompassBox = new System.Windows.Forms.PictureBox();
+      this.Longitude = new System.Windows.Forms.TextBox();
+      this.Lattidude = new System.Windows.Forms.TextBox();
+      this.label2 = new System.Windows.Forms.Label();
+      this.label3 = new System.Windows.Forms.Label();
       this.menuStrip1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.Handicap)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.CompassBox)).BeginInit();
       this.SuspendLayout();
       // 
       // listBox1
@@ -143,9 +149,9 @@
       // listBox3
       // 
       this.listBox3.FormattingEnabled = true;
-      this.listBox3.Location = new System.Drawing.Point(325, 313);
+      this.listBox3.Location = new System.Drawing.Point(736, 313);
       this.listBox3.Name = "listBox3";
-      this.listBox3.Size = new System.Drawing.Size(291, 173);
+      this.listBox3.Size = new System.Drawing.Size(165, 173);
       this.listBox3.TabIndex = 4;
       // 
       // label1
@@ -163,15 +169,15 @@
       this.button2.Name = "button2";
       this.button2.Size = new System.Drawing.Size(75, 23);
       this.button2.TabIndex = 6;
-      this.button2.Text = "button2";
+      this.button2.Text = "Nothing?";
       this.button2.UseVisualStyleBackColor = true;
       this.button2.Click += new System.EventHandler(this.button2_Click);
       // 
       // Handicap
       // 
-      this.Handicap.Location = new System.Drawing.Point(722, 152);
+      this.Handicap.Location = new System.Drawing.Point(516, 206);
       this.Handicap.Name = "Handicap";
-      this.Handicap.Size = new System.Drawing.Size(100, 92);
+      this.Handicap.Size = new System.Drawing.Size(100, 95);
       this.Handicap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
       this.Handicap.TabIndex = 7;
       this.Handicap.TabStop = false;
@@ -183,8 +189,9 @@
       this.button4.Cursor = System.Windows.Forms.Cursors.Default;
       this.button4.Location = new System.Drawing.Point(100, 506);
       this.button4.Name = "button4";
-      this.button4.Size = new System.Drawing.Size(36, 23);
+      this.button4.Size = new System.Drawing.Size(48, 23);
       this.button4.TabIndex = 9;
+      this.button4.Text = "RED";
       this.button4.UseVisualStyleBackColor = false;
       this.button4.Click += new System.EventHandler(this.button4_Click);
       // 
@@ -192,7 +199,7 @@
       // 
       this.button3.BackColor = System.Drawing.Color.Blue;
       this.button3.Cursor = System.Windows.Forms.Cursors.Default;
-      this.button3.Location = new System.Drawing.Point(142, 506);
+      this.button3.Location = new System.Drawing.Point(170, 506);
       this.button3.Name = "button3";
       this.button3.Size = new System.Drawing.Size(36, 23);
       this.button3.TabIndex = 10;
@@ -203,7 +210,7 @@
       // 
       this.button5.BackColor = System.Drawing.Color.Green;
       this.button5.Cursor = System.Windows.Forms.Cursors.Default;
-      this.button5.Location = new System.Drawing.Point(184, 506);
+      this.button5.Location = new System.Drawing.Point(212, 506);
       this.button5.Name = "button5";
       this.button5.Size = new System.Drawing.Size(36, 23);
       this.button5.TabIndex = 11;
@@ -214,7 +221,7 @@
       // 
       this.button6.BackColor = System.Drawing.Color.Brown;
       this.button6.Cursor = System.Windows.Forms.Cursors.Default;
-      this.button6.Location = new System.Drawing.Point(226, 506);
+      this.button6.Location = new System.Drawing.Point(254, 506);
       this.button6.Name = "button6";
       this.button6.Size = new System.Drawing.Size(36, 23);
       this.button6.TabIndex = 12;
@@ -225,7 +232,7 @@
       // 
       this.button7.BackColor = System.Drawing.Color.Purple;
       this.button7.Cursor = System.Windows.Forms.Cursors.Default;
-      this.button7.Location = new System.Drawing.Point(268, 506);
+      this.button7.Location = new System.Drawing.Point(309, 506);
       this.button7.Name = "button7";
       this.button7.Size = new System.Drawing.Size(36, 23);
       this.button7.TabIndex = 13;
@@ -236,7 +243,8 @@
       // 
       this.button8.BackColor = System.Drawing.Color.Purple;
       this.button8.Cursor = System.Windows.Forms.Cursors.Default;
-      this.button8.Location = new System.Drawing.Point(325, 506);
+      this.button8.ForeColor = System.Drawing.SystemColors.ControlLight;
+      this.button8.Location = new System.Drawing.Point(370, 506);
       this.button8.Name = "button8";
       this.button8.Size = new System.Drawing.Size(60, 23);
       this.button8.TabIndex = 14;
@@ -248,7 +256,7 @@
       // 
       this.button9.BackColor = System.Drawing.Color.Yellow;
       this.button9.Cursor = System.Windows.Forms.Cursors.Default;
-      this.button9.Location = new System.Drawing.Point(391, 506);
+      this.button9.Location = new System.Drawing.Point(436, 506);
       this.button9.Name = "button9";
       this.button9.Size = new System.Drawing.Size(36, 23);
       this.button9.TabIndex = 15;
@@ -259,7 +267,7 @@
       // 
       this.button10.BackColor = System.Drawing.Color.Pink;
       this.button10.Cursor = System.Windows.Forms.Cursors.Default;
-      this.button10.Location = new System.Drawing.Point(433, 506);
+      this.button10.Location = new System.Drawing.Point(491, 506);
       this.button10.Name = "button10";
       this.button10.Size = new System.Drawing.Size(36, 23);
       this.button10.TabIndex = 16;
@@ -270,18 +278,66 @@
       // 
       this.button11.BackColor = System.Drawing.Color.Orange;
       this.button11.Cursor = System.Windows.Forms.Cursors.Default;
-      this.button11.Location = new System.Drawing.Point(475, 506);
+      this.button11.Location = new System.Drawing.Point(533, 506);
       this.button11.Name = "button11";
       this.button11.Size = new System.Drawing.Size(36, 23);
       this.button11.TabIndex = 17;
       this.button11.UseVisualStyleBackColor = false;
       this.button11.Click += new System.EventHandler(this.button11_Click);
       // 
+      // CompassBox
+      // 
+      this.CompassBox.Location = new System.Drawing.Point(325, 209);
+      this.CompassBox.Name = "CompassBox";
+      this.CompassBox.Size = new System.Drawing.Size(100, 92);
+      this.CompassBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+      this.CompassBox.TabIndex = 18;
+      this.CompassBox.TabStop = false;
+      // 
+      // Longitude
+      // 
+      this.Longitude.Location = new System.Drawing.Point(417, 339);
+      this.Longitude.Name = "Longitude";
+      this.Longitude.ReadOnly = true;
+      this.Longitude.Size = new System.Drawing.Size(100, 20);
+      this.Longitude.TabIndex = 19;
+      // 
+      // Lattidude
+      // 
+      this.Lattidude.Location = new System.Drawing.Point(417, 394);
+      this.Lattidude.Name = "Lattidude";
+      this.Lattidude.ReadOnly = true;
+      this.Lattidude.Size = new System.Drawing.Size(100, 20);
+      this.Lattidude.TabIndex = 20;
+      // 
+      // label2
+      // 
+      this.label2.AutoSize = true;
+      this.label2.Location = new System.Drawing.Point(322, 346);
+      this.label2.Name = "label2";
+      this.label2.Size = new System.Drawing.Size(54, 13);
+      this.label2.TabIndex = 21;
+      this.label2.Text = "Longitude";
+      // 
+      // label3
+      // 
+      this.label3.AutoSize = true;
+      this.label3.Location = new System.Drawing.Point(322, 401);
+      this.label3.Name = "label3";
+      this.label3.Size = new System.Drawing.Size(51, 13);
+      this.label3.TabIndex = 22;
+      this.label3.Text = "Lattidude";
+      // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(913, 539);
+      this.Controls.Add(this.label3);
+      this.Controls.Add(this.label2);
+      this.Controls.Add(this.Lattidude);
+      this.Controls.Add(this.Longitude);
+      this.Controls.Add(this.CompassBox);
       this.Controls.Add(this.button11);
       this.Controls.Add(this.button10);
       this.Controls.Add(this.button9);
@@ -305,6 +361,7 @@
       this.menuStrip1.ResumeLayout(false);
       this.menuStrip1.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.Handicap)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.CompassBox)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -335,6 +392,11 @@
     private System.Windows.Forms.Button button9;
     private System.Windows.Forms.Button button10;
     private System.Windows.Forms.Button button11;
+    private System.Windows.Forms.PictureBox CompassBox;
+    private System.Windows.Forms.TextBox Longitude;
+    private System.Windows.Forms.TextBox Lattidude;
+    private System.Windows.Forms.Label label2;
+    private System.Windows.Forms.Label label3;
   }
 }
 

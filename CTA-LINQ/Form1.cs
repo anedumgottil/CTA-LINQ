@@ -5,7 +5,7 @@
 // Total Ridership
 // avg RiderShip (Daily)
 // Stops at stations         (done)
-// location                  (done)
+// location                  (done)??
 // total number of stations  (done)
 //
 
@@ -20,7 +20,7 @@
 // Handicap blinker                                               (done)
 // Info about a specific day                                      (done)
 // closest station
-// list of one line (color buttons)
+// list of one line (color buttons)                               (done)
 //
 
 
@@ -143,8 +143,6 @@ namespace CTA_LINQ
         listBox3.Items.Add(data.ADA);
         if (data.ADA)
         {
-          //Image image = Image()
-          //Handicap.ImageLocation = "http://www.clker.com/cliparts/9/u/7/b/Y/V/handicap-logo-hi.png";
           Handicap.ImageLocation = @"Handicap-Light.png";
         }
         else
@@ -153,14 +151,31 @@ namespace CTA_LINQ
         }
         
         listBox3.Items.Add(data.direction);
-
-        listBox3.Items.Add(data.latitude); 
-
+        updateDirection(data.direction);
+        listBox3.Items.Add(data.latitude);
+        Longitude.Text = Convert.ToString(data.longitude);
+        Lattidude.Text = Convert.ToString(data.latitude);
         listBox3.Items.Add(data.longitude);
       }
       
       
 
+    }
+    private void updateDirection(String directoin)
+    {
+      if (directoin.Equals("S"))
+      {
+        CompassBox.ImageLocation = @"Compass-South.png";
+      }else if(directoin.Equals("N"))
+      {
+        CompassBox.ImageLocation = @"Compass-North.png";
+      }else if(directoin.Equals("E"))
+      {
+        CompassBox.ImageLocation = @"Compass-East.png";
+      }else if(directoin.Equals("W"))
+      {
+        CompassBox.ImageLocation = @"Compass-West.png";
+      }
     }
 
     private void button2_Click(object sender, EventArgs e)
