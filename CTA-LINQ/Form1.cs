@@ -14,12 +14,12 @@
 // Extra
 // Graph daily total                                              (done)
 // Avg RiderShip (monthly/yearly)
-// Find Stations(by name) (maybe both)                            
-// Change background color depending on statiion color
-// Direction of travel compass
+// Find Stations(by name)                             
+// Change background color depending on statiion color            (done)
+// Direction of travel compass                                    (done)
 // Handicap blinker                                               (done)
 // Info about a specific day                                      (done)
-// closest station
+// Add CTA logo
 // list of one line (color buttons)                               (done)
 //
 
@@ -46,6 +46,7 @@ namespace CTA_LINQ
       //displayAllStops();
       displayAllStations();
       Handicap.ImageLocation = @"Handicap-Dark.png";
+      this.CTALogoBox.ImageLocation = @"CTA-Logo.png";
       
     }
     private void displayAllStops()
@@ -397,6 +398,11 @@ namespace CTA_LINQ
     private void toolTip1_Popup(object sender, PopupEventArgs e)
     {
       
+    }
+
+    private void Search_Click(object sender, EventArgs e)
+    {
+
     }
   }
 }

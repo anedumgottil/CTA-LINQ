@@ -59,9 +59,12 @@
       this.Longitude = new System.Windows.Forms.TextBox();
       this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
       this.label5 = new System.Windows.Forms.Label();
+      this.CTALogoBox = new System.Windows.Forms.PictureBox();
+      this.Search = new System.Windows.Forms.Button();
       this.menuStrip1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.Handicap)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.CompassBox)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.CTALogoBox)).BeginInit();
       this.SuspendLayout();
       // 
       // listBox1
@@ -98,14 +101,14 @@
       // placeholderToolStripMenuItem
       // 
       this.placeholderToolStripMenuItem.Name = "placeholderToolStripMenuItem";
-      this.placeholderToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+      this.placeholderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
       this.placeholderToolStripMenuItem.Text = "[Placeholder]";
       this.placeholderToolStripMenuItem.Click += new System.EventHandler(this.placeholderToolStripMenuItem_Click);
       // 
       // sourceToolStripMenuItem
       // 
       this.sourceToolStripMenuItem.Name = "sourceToolStripMenuItem";
-      this.sourceToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+      this.sourceToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
       this.sourceToolStripMenuItem.Text = "Source";
       this.sourceToolStripMenuItem.Click += new System.EventHandler(this.sourceToolStripMenuItem_Click);
       // 
@@ -314,11 +317,32 @@
       this.label5.TabIndex = 25;
       this.label5.Text = "Search for Stops";
       // 
+      // CTALogoBox
+      // 
+      this.CTALogoBox.Location = new System.Drawing.Point(706, 348);
+      this.CTALogoBox.Name = "CTALogoBox";
+      this.CTALogoBox.Size = new System.Drawing.Size(149, 147);
+      this.CTALogoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+      this.CTALogoBox.TabIndex = 26;
+      this.CTALogoBox.TabStop = false;
+      // 
+      // Search
+      // 
+      this.Search.Location = new System.Drawing.Point(626, 80);
+      this.Search.Name = "Search";
+      this.Search.Size = new System.Drawing.Size(75, 22);
+      this.Search.TabIndex = 27;
+      this.Search.Text = "Search";
+      this.Search.UseVisualStyleBackColor = true;
+      this.Search.Click += new System.EventHandler(this.Search_Click);
+      // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(913, 539);
+      this.Controls.Add(this.Search);
+      this.Controls.Add(this.CTALogoBox);
       this.Controls.Add(this.label5);
       this.Controls.Add(this.label4);
       this.Controls.Add(this.StationSearchBox);
@@ -339,6 +363,7 @@
       this.menuStrip1.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.Handicap)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.CompassBox)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.CTALogoBox)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -376,6 +401,8 @@
     private System.Windows.Forms.TextBox Longitude;
     private System.Windows.Forms.ToolTip toolTip1;
     private System.Windows.Forms.Label label5;
+    private System.Windows.Forms.PictureBox CTALogoBox;
+    private System.Windows.Forms.Button Search;
   }
 }
 

@@ -15,6 +15,7 @@ namespace CTA_LINQ
     public Form3()
     {
       InitializeComponent();
+      CTALogoBox.ImageLocation = @"CTA-Logo.png";
     }
 
     private void button1_Click(object sender, EventArgs e)
@@ -51,6 +52,11 @@ namespace CTA_LINQ
 
       }
   
+    }
+
+    private void CTALogoBox_Click(object sender, EventArgs e)
+    {
+
     }
   }
 }
