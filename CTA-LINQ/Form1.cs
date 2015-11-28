@@ -150,12 +150,12 @@ namespace CTA_LINQ
           Handicap.ImageLocation = @"Handicap-Dark.png";
         }
         
-        listBox3.Items.Add(data.direction);
+       
         updateDirection(data.direction);
-        listBox3.Items.Add(data.latitude);
+        
         Longitude.Text = Convert.ToString(data.longitude);
         Lattidude.Text = Convert.ToString(data.latitude);
-        listBox3.Items.Add(data.longitude);
+     
       }
       
       
@@ -226,12 +226,57 @@ namespace CTA_LINQ
 
     private void button4_Click(object sender, EventArgs e)
     {
+    }
+
+    private void button3_Click(object sender, EventArgs e)
+    {
+      
+    }
+
+    private void button5_Click(object sender, EventArgs e)
+    {
+      
+    }
+
+    private void button6_Click(object sender, EventArgs e)
+    {
+      
+    }
+
+    private void button7_Click(object sender, EventArgs e)
+    {
+      
+    }
+
+    private void button8_Click(object sender, EventArgs e)
+    {
+      
+    }
+
+    private void button9_Click(object sender, EventArgs e)
+    {
+      
+    }
+
+    private void button10_Click(object sender, EventArgs e)
+    {
+      
+    }
+
+    private void button11_Click(object sender, EventArgs e)
+    {
+      
+    }
+
+    private void redToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+
       Form4 frm = new Form4();
 
       BusinessTier.Business bt = new BusinessTier.Business();
       var data = bt.GetColorStops("Red");
       frm.label1.Text = "Red Line Stops";
-      frm.BackColor = Color.FromName("Red");
+      frm.BackColor = System.Drawing.Color.Red;
       foreach (var x in data)
       {
         frm.listBox1.Items.Add(x.name);
@@ -239,7 +284,7 @@ namespace CTA_LINQ
       frm.ShowDialog();
     }
 
-    private void button3_Click(object sender, EventArgs e)
+    private void blueToolStripMenuItem_Click(object sender, EventArgs e)
     {
       Form4 frm = new Form4();
 
@@ -254,7 +299,7 @@ namespace CTA_LINQ
       frm.ShowDialog();
     }
 
-    private void button5_Click(object sender, EventArgs e)
+    private void greenToolStripMenuItem_Click(object sender, EventArgs e)
     {
       Form4 frm = new Form4();
 
@@ -269,7 +314,7 @@ namespace CTA_LINQ
       frm.ShowDialog();
     }
 
-    private void button6_Click(object sender, EventArgs e)
+    private void brownToolStripMenuItem_Click(object sender, EventArgs e)
     {
       Form4 frm = new Form4();
 
@@ -284,7 +329,7 @@ namespace CTA_LINQ
       frm.ShowDialog();
     }
 
-    private void button7_Click(object sender, EventArgs e)
+    private void purpleToolStripMenuItem_Click(object sender, EventArgs e)
     {
       Form4 frm = new Form4();
 
@@ -299,7 +344,7 @@ namespace CTA_LINQ
       frm.ShowDialog();
     }
 
-    private void button8_Click(object sender, EventArgs e)
+    private void purpleExpressToolStripMenuItem_Click(object sender, EventArgs e)
     {
       Form4 frm = new Form4();
 
@@ -314,7 +359,7 @@ namespace CTA_LINQ
       frm.ShowDialog();
     }
 
-    private void button9_Click(object sender, EventArgs e)
+    private void yellowToolStripMenuItem_Click(object sender, EventArgs e)
     {
       Form4 frm = new Form4();
 
@@ -329,7 +374,7 @@ namespace CTA_LINQ
       frm.ShowDialog();
     }
 
-    private void button10_Click(object sender, EventArgs e)
+    private void pinkToolStripMenuItem_Click(object sender, EventArgs e)
     {
       Form4 frm = new Form4();
 
@@ -344,14 +389,14 @@ namespace CTA_LINQ
       frm.ShowDialog();
     }
 
-    private void button11_Click(object sender, EventArgs e)
+    private void orangeToolStripMenuItem_Click(object sender, EventArgs e)
     {
       Form4 frm = new Form4();
 
       BusinessTier.Business bt = new BusinessTier.Business();
       var data = bt.GetColorStops("Orange");
       frm.label1.Text = "Orange Line Stops";
-      frm.BackColor = Color.FromName("Orange");
+      frm.BackColor = System.Drawing.Color.Tomato;
       foreach (var x in data)
       {
         frm.listBox1.Items.Add(x.name);
