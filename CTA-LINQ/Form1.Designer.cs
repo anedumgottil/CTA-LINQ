@@ -66,6 +66,7 @@
       this.textBox2 = new System.Windows.Forms.TextBox();
       this.label6 = new System.Windows.Forms.Label();
       this.label7 = new System.Windows.Forms.Label();
+      this.panel1 = new System.Windows.Forms.Panel();
       this.menuStrip1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.Handicap)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.CompassBox)).BeginInit();
@@ -222,7 +223,7 @@
       // listBox2
       // 
       this.listBox2.FormattingEnabled = true;
-      this.listBox2.Location = new System.Drawing.Point(325, 27);
+      this.listBox2.Location = new System.Drawing.Point(325, 30);
       this.listBox2.Name = "listBox2";
       this.listBox2.Size = new System.Drawing.Size(291, 173);
       this.listBox2.TabIndex = 3;
@@ -377,12 +378,21 @@
       this.label7.TabIndex = 31;
       this.label7.Text = "Avg Ridership";
       // 
+      // panel1
+      // 
+      this.panel1.BackColor = System.Drawing.Color.Aqua;
+      this.panel1.Location = new System.Drawing.Point(622, 30);
+      this.panel1.Name = "panel1";
+      this.panel1.Size = new System.Drawing.Size(279, 111);
+      this.panel1.TabIndex = 32;
+      // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.SystemColors.Control;
       this.ClientSize = new System.Drawing.Size(913, 539);
+      this.Controls.Add(this.panel1);
       this.Controls.Add(this.label7);
       this.Controls.Add(this.label6);
       this.Controls.Add(this.textBox2);
@@ -454,6 +464,7 @@
     private System.Windows.Forms.TextBox textBox2;
     private System.Windows.Forms.Label label6;
     private System.Windows.Forms.Label label7;
+    private System.Windows.Forms.Panel panel1;
   }
 }
 
