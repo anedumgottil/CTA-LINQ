@@ -19,7 +19,7 @@
 // Direction of travel compass                                    (done)
 // Handicap blinker                                               (done)
 // Info about a specific day                                      (done)
-// Add CTA logo
+// Add CTA logo                                                   (done)
 // list of one line (color buttons)                               (done)
 //
 
