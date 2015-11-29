@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
       this.label1 = new System.Windows.Forms.Label();
       this.listBox1 = new System.Windows.Forms.ListBox();
       this.CTALineBox = new System.Windows.Forms.PictureBox();
@@ -70,6 +71,7 @@
       this.Controls.Add(this.CTALineBox);
       this.Controls.Add(this.listBox1);
       this.Controls.Add(this.label1);
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Name = "Form4";
       this.Text = "Form4";
       ((System.ComponentModel.ISupportInitialize)(this.CTALineBox)).EndInit();

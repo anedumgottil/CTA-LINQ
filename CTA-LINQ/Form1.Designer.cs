@@ -29,6 +29,7 @@
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
       this.listBox1 = new System.Windows.Forms.ListBox();
       this.menuStrip1 = new System.Windows.Forms.MenuStrip();
       this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -340,6 +341,7 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.BackColor = System.Drawing.SystemColors.Control;
       this.ClientSize = new System.Drawing.Size(913, 539);
       this.Controls.Add(this.Search);
       this.Controls.Add(this.CTALogoBox);
@@ -356,6 +358,7 @@
       this.Controls.Add(this.listBox2);
       this.Controls.Add(this.listBox1);
       this.Controls.Add(this.menuStrip1);
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.MainMenuStrip = this.menuStrip1;
       this.Name = "Form1";
       this.Text = "CTA Data Analysis";

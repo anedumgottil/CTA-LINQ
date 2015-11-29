@@ -43,7 +43,7 @@ namespace CTA_LINQ
     public Form1()
     {
       InitializeComponent();
-      //displayAllStops();
+      
       displayAllStations();
       Handicap.ImageLocation = @"Handicap-Dark.png";
       this.CTALogoBox.ImageLocation = @"CTA-Logo.png";
@@ -174,7 +174,7 @@ namespace CTA_LINQ
     {
       if (color.Equals("Red"))
       {
-        this.BackColor = System.Drawing.Color.Red;
+        this.BackColor = System.Drawing.Color.Firebrick;
       }
       else if (color.Equals("Blue"))
       {
@@ -402,7 +402,24 @@ namespace CTA_LINQ
 
     private void Search_Click(object sender, EventArgs e)
     {
+      String station_name = StationSearchBox.Text;
 
+      BusinessTier.Business bt = new BusinessTier.Business();
+      
+      var data = bt.GetStops(station_name);
+      if (data != null)
+      {
+        listBox2.Items.Clear();
+        foreach (var stop in data)
+        {
+          listBox2.Items.Add(stop.name);
+        }
+      }
+      else
+      {
+
+      }
+      
     }
   }
 }

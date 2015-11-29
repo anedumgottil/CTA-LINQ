@@ -169,6 +169,7 @@
     <Content Include="Compass-West.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="CTA-ico.ico" />
     <Content Include="CTA-Logo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

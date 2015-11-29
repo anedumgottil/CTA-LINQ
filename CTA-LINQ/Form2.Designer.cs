@@ -31,6 +31,7 @@
       System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
       System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
       System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
       this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
       this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
       this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -101,6 +102,7 @@
       this.Controls.Add(this.dateTimePicker2);
       this.Controls.Add(this.dateTimePicker1);
       this.Controls.Add(this.chart1);
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Name = "Form2";
       this.Text = "Daily Total";
       ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
