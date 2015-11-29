@@ -160,7 +160,11 @@ namespace CTA_LINQ
         
         Longitude.Text = Convert.ToString(data.longitude);
         Lattidude.Text = Convert.ToString(data.latitude);
-     
+        System.Media.SoundPlayer player =
+        new System.Media.SoundPlayer();
+        player.SoundLocation = @"Ding.wav";
+        player.Load();
+        player.Play();
       }
       
     }

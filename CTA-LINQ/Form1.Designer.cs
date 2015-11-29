@@ -106,14 +106,14 @@
       // placeholderToolStripMenuItem
       // 
       this.placeholderToolStripMenuItem.Name = "placeholderToolStripMenuItem";
-      this.placeholderToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
-      this.placeholderToolStripMenuItem.Text = "[Placeholder]";
+      this.placeholderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.placeholderToolStripMenuItem.Text = "About";
       this.placeholderToolStripMenuItem.Click += new System.EventHandler(this.placeholderToolStripMenuItem_Click);
       // 
       // sourceToolStripMenuItem
       // 
       this.sourceToolStripMenuItem.Name = "sourceToolStripMenuItem";
-      this.sourceToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+      this.sourceToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
       this.sourceToolStripMenuItem.Text = "Source";
       this.sourceToolStripMenuItem.Click += new System.EventHandler(this.sourceToolStripMenuItem_Click);
       // 
@@ -286,7 +286,7 @@
       // 
       // StationSearchBox
       // 
-      this.StationSearchBox.Location = new System.Drawing.Point(622, 54);
+      this.StationSearchBox.Location = new System.Drawing.Point(622, 98);
       this.StationSearchBox.Name = "StationSearchBox";
       this.StationSearchBox.Size = new System.Drawing.Size(248, 20);
       this.StationSearchBox.TabIndex = 23;
@@ -316,7 +316,7 @@
       // 
       this.label5.AutoSize = true;
       this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label5.Location = new System.Drawing.Point(622, 27);
+      this.label5.Location = new System.Drawing.Point(622, 58);
       this.label5.Name = "label5";
       this.label5.Size = new System.Drawing.Size(129, 20);
       this.label5.TabIndex = 25;
@@ -333,7 +333,7 @@
       // 
       // Search
       // 
-      this.Search.Location = new System.Drawing.Point(626, 80);
+      this.Search.Location = new System.Drawing.Point(624, 137);
       this.Search.Name = "Search";
       this.Search.Size = new System.Drawing.Size(75, 22);
       this.Search.TabIndex = 27;
