@@ -106,16 +106,27 @@ namespace CTA_LINQ
       listBox2.Items.Clear();
 
 
-      var line = this.listBox1.Text;
+      var station = this.listBox1.Text;
 
       BusinessTier.Business bt = new BusinessTier.Business();
-      
-      var data = bt.GetStops(line);
+
+      var data = bt.GetStops(station);
 
       foreach (var stop in data)
       {
         listBox2.Items.Add(stop.name);
       }
+
+      var total = bt.GetStopDailyTotal(station);
+      var Average = (from ints in total
+                     select ints).Average();
+
+      Average = (int)Average;
+      textBox1.Text = string.Format("{0:n}/day", Average);
+
+      var sum = (from ints in total
+                 select ints).Sum();
+      textBox2.Text = string.Format("{0:n}", sum);
 
     }
 
