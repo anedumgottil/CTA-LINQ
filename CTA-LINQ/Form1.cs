@@ -162,7 +162,7 @@ namespace CTA_LINQ
         Lattidude.Text = Convert.ToString(data.latitude);
      
       }
-
+      
     }
     private void updateDirection(String direction)
     {
@@ -262,9 +262,6 @@ namespace CTA_LINQ
 
     }
 
-  
-    
-
     private void redToolStripMenuItem_Click(object sender, EventArgs e)
     {
 
@@ -273,7 +270,7 @@ namespace CTA_LINQ
       BusinessTier.Business bt = new BusinessTier.Business();
       var data = bt.GetColorStops("Red");
       frm.label1.Text = "Red Line Stops";
-      frm.BackColor = System.Drawing.Color.Red;
+      frm.BackColor = System.Drawing.Color.Firebrick;
       foreach (var x in data)
       {
         frm.listBox1.Items.Add(x.name);
@@ -418,7 +415,8 @@ namespace CTA_LINQ
       BusinessTier.Business bt = new BusinessTier.Business();
       
       var data = bt.GetStops(station_name);
-      if (data != null)
+
+      if (data.Count != 0)
       {
         listBox2.Items.Clear();
         foreach (var stop in data)
@@ -428,7 +426,7 @@ namespace CTA_LINQ
       }
       else
       {
-
+        MessageBox.Show("Station not found, Please try agian", "Important Message");
       }
       
     }
