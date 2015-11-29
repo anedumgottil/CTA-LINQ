@@ -261,8 +261,22 @@ namespace BusinessTier
       }
       return infolist;
     }
-    
+    public List<int> GetStopDailyTotal(string name)
+    {
+      var info = from stations in db.Stations
+                 where stations.Name == name
+                 join riders in db.Riderships on stations.StationID equals riders.StationID into grp
+                 from data in grp
+                 select data.DailyTotal;
+      
+      var totalList = new List<int>();
+      foreach(var x in info){
+        totalList.Add(x);
+      }
+      return totalList;
 
+    }
+    
     
 
   }//class
