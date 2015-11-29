@@ -140,7 +140,7 @@ namespace CTA_LINQ
       BusinessTier.Business bt = new BusinessTier.Business();
 
       
-      var data = bt.GetSingleStop(station, stop);
+      var data = bt.GetSingleStop(stop);
      
       if (data != null)
       {

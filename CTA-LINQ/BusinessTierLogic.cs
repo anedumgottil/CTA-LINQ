@@ -200,12 +200,12 @@ namespace BusinessTier
       return data;
     }
 
-    public Stop GetSingleStop(string stationName, string stop_name)
+    public Stop GetSingleStop(string stop_name)
     {
       var q = from station in db.Stations
               join stops in db.Stops on station.StationID equals stops.StationID into stopgroup
               from stop in stopgroup
-              where stop.Name == stop_name && station.Name == stationName
+              where stop.Name == stop_name
               select stop;
 
       foreach (var x in q)
